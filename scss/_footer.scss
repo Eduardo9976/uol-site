@@ -1,0 +1,26 @@
+footer {
+  font-size: em(14);
+  color: $grayC;
+  background: $gray;
+  padding: 40px 0;
+
+  .footerContext1 {
+    @include container;
+    border-bottom: 2px solid $grayC;
+
+    p {
+      padding: 20px 0;
+    }
+  }
+
+  .footerContext2 {
+    @include container;
+    padding: 20px $spaceDefault;
+  }
+
+  .footerContext3 {
+    @include container;
+    cursor: pointer;
+    color: $yellow;
+  }
+}

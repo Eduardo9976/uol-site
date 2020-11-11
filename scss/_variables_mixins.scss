@@ -1,0 +1,91 @@
+$white: #fff;
+$black: #000;
+$red: #ff3834;
+$yellow: #fab803;
+$bgContext: #eee;
+$gray: #333333;
+$grayE: #d9d8d6;
+$grayC: #ededed;
+
+
+$spaceDefault: 10px;
+$spaceP: 20px;
+
+
+$fonte-1: sans-serif, Arial;
+
+
+@function em($pixel, $contexto: 16) {
+  @return $pixel / $contexto+em;
+}
+
+@mixin container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 $spaceDefault;
+}
+@mixin containerMid {
+  max-width: 358px;
+}
+
+
+@mixin flex($position, $wrap:nowrap) {
+  display: flex;
+
+  @if $position==s {
+      justify-content: flex-start;
+  }
+
+  @else if $position==c {
+      justify-content: center;
+  }
+
+  @else if $position==e {
+      justify-content: flex-end;
+  }
+
+  flex-wrap: $wrap;
+}
+
+@mixin tipo-1($size, $color: $gray) {
+  font-family: $fonte-1;
+  color: $color;
+
+  @if $size==14 {
+    font-size: em(14);
+    line-height: em(30, 14);
+  }
+
+  @else if $size==16 {
+      font-size: em(16);
+      line-height: em(30);
+  }
+
+  @else if $size==18 {
+      font-size: em(18);
+      line-height: em(30, 18);
+  }
+
+  @else if $size==24 {
+      font-size: em(24);
+      line-height: em(30, 24);
+  }
+
+  @else if $size==28 {
+      font-size: em(28);
+      line-height: em(30, 28);
+  }
+}
+//Media-queries
+@mixin d($dispositivo) {
+  @if $dispositivo==p {
+    @media (max-width: 770px) {
+        @content;
+    }
+  }
+  @else if $dispositivo==m {
+      @media only screen and (max-width: 767px) {
+          @content;
+      }
+  }
+}

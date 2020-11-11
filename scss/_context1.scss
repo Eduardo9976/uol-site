@@ -1,0 +1,120 @@
+body {
+  font-family: $fonte-1;
+}
+
+.context1 {
+  background: url("./../img/bg-top.jpg")center center no-repeat;
+  background-size: cover;
+  height: 640px;
+
+  @include d(m) {
+    background: url("./../img/bg-top.png")center center no-repeat;
+  }
+}
+
+.container {
+  @include container;
+}
+
+.context1Main {
+  @include containerMid;
+  text-align: center;
+
+  @include d(m) {
+    margin: 0 auto;
+    padding-bottom: $spaceDefault;
+  }
+
+  .logos {
+    margin: 0 auto;
+    padding: 60px 0 $spaceP 0;
+  }
+
+  h1 {
+    color: $white;
+    font-size: em(40);
+    font-family: $fonte-1;
+
+    @include d(m) {
+      font-size: em(36);
+    }
+  }
+
+  h2 {
+    font-family: $fonte-1;
+    color: $white;
+    font-size: em(30);
+    font-weight: normal;
+    text-align: center;
+
+    @include d(m) {
+      font-size: em(26);
+    }
+  }
+
+  p {
+    padding: $spaceDefault 0;
+    @include tipo-1(14, $white);
+    line-height: $spaceP;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  .ContainerNexts {
+    @include flex(s);
+    padding: $spaceDefault 0;
+  }
+
+  .nexts {
+    flex: 2;
+    @include flex(s);
+    flex-direction: column;
+
+    span {
+      font-size: em(14);
+      background: $red;
+      padding: 5px $spaceDefault;
+    }
+
+    p:nth-child(2) {
+      font-size: em(20);
+    }
+
+    p:nth-child(3) {
+      color: $red;
+      font-weight: bold;
+      font-size: em(28);
+    }
+  }
+
+  .nextsImg {
+    text-align: center;
+    flex: 1;
+
+    p {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .experience {
+    margin: 20px 0;
+    background: $yellow;
+    cursor: pointer;
+
+    p {
+      font-size: em(20);
+      color: $black;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  small {
+    color: $white;
+  }
+}

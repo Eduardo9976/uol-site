@@ -1,0 +1,9 @@
+header {
+  background: $yellow;
+  span {
+    @include flex(c);
+    align-items: center;
+    padding: $spaceDefault;
+    @include tipo-1(18, $black);
+  }
+}

@@ -1,0 +1,46 @@
+.context2 {
+  margin-top: 50px;
+
+  @include d(m) {
+    margin-top: 0px;
+  }
+
+  background: $bgContext;
+  padding: $spaceDefault;
+  position: relative;
+
+  .context2Main {
+    padding: $spaceDefault 0;
+    @include flex(s, wrap);
+    justify-content: space-around;
+
+    div {
+      width: 270px;
+      @include flex(s);
+
+      p {
+        padding: 5px;
+      }
+    }
+
+    div+div {
+      margin-left: $spaceDefault;
+
+      @include d(m) {
+        margin-left: 0;
+        margin-top: $spaceDefault;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -25px;
+      width: 0;
+      height: 0;
+      border-left: 25px solid transparent;
+      border-right: 25px solid transparent;
+      border-top: 25px solid $bgContext;
+    }
+  }
+}

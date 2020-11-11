@@ -1,0 +1,89 @@
+.context3 {
+  @include container;
+  text-align: center;
+
+  h2 {
+    margin-top: 40px;
+    color: $gray;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 2px;
+      margin: 0 auto;
+      margin-top: $spaceDefault;
+      background: $yellow;
+    }
+
+    @include d(m) {
+      max-width: 20ch;
+      margin: 0 auto;
+      margin-top: 40px;
+    }
+  }
+
+  .context3ImgContainer {
+    margin: 50px 0;
+    @include flex(s, wrap);
+
+    @include d(m) {
+      flex-direction: column;
+    }
+  }
+
+  .context3Imgs {
+    @include flex(s);
+    flex-direction: column;
+    flex: 1 1 280px;
+    background: $grayE;
+    border-radius: 4px;
+    margin-bottom: $spaceDefault;
+
+    img {
+      padding: $spaceDefault;
+    }
+
+    img:nth-child(1) {
+      margin: 0 auto;
+    }
+
+    span {
+      @include flex(c);
+      align-items: center;
+    }
+  }
+
+  .context3Imgs+.context3Imgs {
+    margin-left: $spaceDefault;
+
+    @include d(m) {
+      margin-left: 0;
+    }
+  }
+
+  .plus {
+    width: 180px;
+    height: 40px;
+  }
+
+  .logosAll {
+    max-width: 95%;
+  }
+
+  .champions {
+    width: 220px;
+    margin: 0 auto;
+  }
+
+  .img02 {
+    @include flex(c);
+    align-items: center;
+    background: $grayC;
+    height: 100px;
+
+    @include d(m) {
+      height: 142px;
+    }
+  }
+}
